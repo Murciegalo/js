@@ -31,7 +31,7 @@ var draw = function(e) {
   lastX = e.offsetX;
   lastY = e.offsetY;
   //run stroke
-  hue++;
+  hue++; 
   context.stroke();
 }
 //add an Event Listener
