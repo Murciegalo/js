@@ -46,7 +46,7 @@ document.getElementById('computedDate').innerHTML = `${dd}/${mm}/${yyyy}`;
    side2 = test2;
    side3 = test3;
    const perimeter = (side1 + side2 + side3)/2;
-   const area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
+   const area =  Math.floor(Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3))));
    console.log(area);
    displayOutcome.innerHTML = `${area}`;
  }
@@ -72,3 +72,123 @@ var animateString = function(id){
 }
 const handrotate =document.querySelector('[name=flipMe]');
 handrotate.addEventListener('click',animateString);
+//--------------------------------------------------------------------
+
+//6.
+// Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.
+// const year = window.prompt("Input a Year : ");
+// x = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+// console.log(x);
+//--------------------------------------------------------------------
+
+//7.
+// Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.
+const sundayEve = () => {
+  for (let year = 2014; year <= 2050; year++)
+    {
+    const d = new Date(year, 0, 1); //year/day/ month
+    if ( d.getDay() === 0 )
+        console.log(`1st January is being a Sunday  ${year}`);
+    }
+  }
+sundayEve();
+//--------------------------------------------------------------------
+
+//8.
+// Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".
+const randomProgram = function() {
+  let randomInteger = Math.floor(Math.random() * 10);
+  let userRandomInteger = prompt('Choose a number from 0 to 10');
+  (randomInteger === userRandomInteger) ? console.log('Good Work') : console.log('Not matched');
+}
+// randomProgram();
+//-------------------------------------------------------------------
+
+//9.
+ // Write a JavaScript program to calculate days left until next Christmas.
+const daysLeftChristmas = function() {
+  let currentDate = new Date();
+  let nextChristmas = new Date(2018, 11, 25);
+  //one day value
+  const one_day=1000*60*60*24;
+  const daysLeft = (nextChristmas - currentDate);
+  let outcome =Math.floor(daysLeft/one_day);
+  console.log(`We got ${outcome} days left for Christmas`);
+}
+daysLeftChristmas();
+//------------------------------------------------------------------
+//10.
+// Write a JavaScript program to calculate multiplication and division of two numbers (input from user).
+const multiplyCalculus = function(){
+  ((input1 >= 0) && (input2 >= 0)) ?
+    $result.innerHTML = input1 * input2 :
+    console.log('Cannot multiply negative numbers');
+}
+let input1 = document.getElementById('numberToOperate1').value;
+let input2 = document.getElementById('numberToOperate2').value;
+
+const divideCalculus = function(){
+  ((input1 > 0) && (input2 > 0)) ?
+    $result.innerHTML = input1/input2 :
+    console.log('Cannot divide by 0');
+}
+
+//Handlers
+const $multiplication = document.querySelector('#multiplication');
+const $division = document.querySelector('#divide');
+$result=document.querySelector('#result');
+//listeners
+$multiplication.addEventListener('click', multiplyCalculus);
+$division.addEventListener('click', divideCalculus);
+//-------------------------------------------------------------------
+//11.
+// Write a JavaScript program to get the website URL (loading page).
+const getURL = () => {
+  let urlSaver = document.URL;
+  console.log(urlSaver);
+}
+getURL();
+// Explanation>>> document.URL : The URL read-only property of the Document interface returns the document location as a string.
+//-------------------------------------------------------------------
+//12.
+//Write a JavaScript exercise to get the extension of a filename.
+const filesExtension = (parameter) => {
+  console.log(parameter.split('.').pop());
+}
+filesExtension('index.html');
+
+// .split() se aplica a strings para separarlos y crea un array
+// .pop se aplica una vez el array es creado para return el ultimo element eliminado del array
+//-------------------------------------------------------------------
+//13.
+// Write a JavaScript program to get the difference between a given number and 13, if the number is greater than 13 return double the absolute difference.
+const difference = function(para) {
+  let difference = para - 13;
+  if(difference > 13) {
+    return difference * 2;
+}
+};
+difference(30);
+//-------------------------------------------------------------------
+//14.
+// Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum.
+const sum = function (para1, para2){
+  if(para1 === para2){
+      let sumatory = (para1 + para2) * 3;
+  } else {
+      sumatory = para1 + para2;
+  }
+}
+//-------------------------------------------------------------------
+//15.
+// Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50.
+const checkFor = function(para1, para2) {
+  let sume = para1+para2;
+  (sume === 50 || (para1 === 50 || para2 === 50)) ?
+    console.log(true) : console.log(false)
+}
+checkFor(0, 49);
+//-----------------------------------------------------------------
+//16.
+ // Write a JavaScript program to create a new string adding "Py" in front of a given string. If the given string begins with "Py" then return the original string.
+ 
