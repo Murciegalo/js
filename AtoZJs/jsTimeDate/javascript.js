@@ -191,4 +191,138 @@ checkFor(0, 49);
 //-----------------------------------------------------------------
 //16.
  // Write a JavaScript program to create a new string adding "Py" in front of a given string. If the given string begins with "Py" then return the original string.
- 
+ const addingStrings = function(para){
+   let string = 'Py';
+   ((para !== ' ') && (para === 'undefined')) ?
+   console.log(`${string}${para}`) : console.log('Please input a string');
+ }
+addingStrings('thon');
+//-------------------------------------------------------------------
+//17.
+// Write a JavaScript program to remove a character at the specified position of a given string and return the new string.
+const removeString = (position,string) =>{
+  var newString = string.substring(position);
+  console.log(newString);
+}
+removeString(1 , 'Python');
+//-------------------------------------------------------------------
+//18.
+// Write a JavaScript program to create a new string from a given string with the first character of the given string added at the front and back.
+const benewString = function(string){
+  let part1 = string.slice(0,1);
+  console.log(`${part1}${string}${part1}`);
+}
+benewString('abusadora');
+//----------------------------------------------------------------
+//19.
+// Write a JavaScript program check if a given positive number is a multiple of 3 or a multiple of 7.
+const multiple = (number) =>{
+  ((number % 3 == 0) || (number % 7 === 0)) ? console.log('It is multiple') : console.log('no');
+}
+multiple(3);
+//------------------------------------------------------------------
+//20.
+// Write a JavaScript program to create a new string from a given string taking the last 3 characters and added at both the front and back. The string length must be 3 or more.
+const trecarsString = function(string){
+  if(string.length >= 3){
+    let outcome = string.slice(string.length -3);
+    let finalOutcome = outcome + string + outcome;
+    console.log(finalOutcome);
+  } else{
+    console.log("Write a bigger word");
+  }
+}
+trecarsString('caraculo');
+//-------------------------------------------------------------------//21.
+// Write a JavaScript program to check if a string starts with 'Java' and false otherwise.
+const startsOn = function(string){
+  let checkVs = string.slice(0 , 4); //+1 to include last One always
+  ('Java' == checkVs) ? console.log(string) :
+  console.log('False');
+}
+startsOn('Javscript');
+//-------------------------------------------------------------------
+//22.
+// Write a JavaScript program to check if a string "Script" presents at 5th (index 4) position in a given string, if "Script" presents in the string return the string without "Script" otherwise return the original one.
+const middleOn = function(string){
+  ('Script' === string.slice(4)) ? console.log(string.slice(0,4)) :
+  console.log(string);
+}
+middleOn('JavaScri');
+//-------------------------------------------------------------------
+//23.
+// Write a JavaScript program to find the largest of three given integers.
+const biggestInteger = (...nums) => {
+  nums.length = 3; // remove extra elements
+  console.log(Math.max(...nums));
+}
+biggestInteger(20, 30, 80);
+//---------------------------------------------------------------
+//24.
+// Write a JavaScript program to find the larger number from the two given positive integers, the two numbers are in the range 40..60 inclusive.
+const testRange = (a, b) => {
+(a >= 40 && a <= 60 && b >= 40 && b <= 60) ? ( a > b ? console.log(a) : console.log(b)) : false ;
+}
+testRange(48, 50) ;
+//-------------------------------------------------------------------
+//25.
+// Write a JavaScript program to count number of times a specified character is contained within a string
+const samecharcounter = function(s, ch) {
+var num = 0;
+for (var i = 0; i < s.length; i++) {
+  (s[i] == ch) ? num++ : num;
+}
+console.log(num);
+}
+samecharcounter('abeacaeadary', 'a');
+//-------------------------------------------------------------------
+//26.
+// Write a JavaScript program to check if the last digit of the three given positive integers is same.
+const lastThreeDigit = function(x, y, z) {
+                  //a string, separado y cogido el last element
+  var lastX=x.toString().split('').pop();
+  var lastY=y.toString().split('').pop();
+  var lastZ=z.toString().split('').pop();
+    if (lastX == lastY && lastX == lastZ && lastY == lastZ){
+      return true;
+    }else{
+        return false;
+        }
+      }
+lastThreeDigit(23,43,53);
+//-------------------------------------------------------------------
+//27.
+// Write a JavaScript program to create new string with first 3 characters are in lower case. If the string length is less than 3 convert all the characters in upper case.
+const less3ToUppercase = (string) => {
+  return (string.length >= 3) ? string.slice(0, 3).toLowerCase() + string.slice(3) :  string.toUpperCase();
+}
+less3ToUppercase('ABANICO');
+//-------------------------------------------------------------------
+//28.
+// Write a JavaScript program to check the total marks of a student in various examinations. The student will get A+ grade if the total marks are in the range 89..100 inclusive, if the examination is "Final-exam." the student will get A+ grade where total marks must be greater than or equal to 90. Return true if the student get A+ grade or false otherwise.
+const studentGrades = function(grades, finalexam) {
+  finalexam = 'Final-exam';
+     (finalexam && grades >=90) ? console.log(true) : console.log("Not the final exam so no worries!");
+    return (grades >= 89 && grades <= 100) ? true: false;
+}
+// studentGrades(90,'Final-exam');
+studentGrades(89);
+//-------------------------------------------------------------------
+//29.
+// Write a JavaScript program to check from two given integers if either one is 8 or their sum or difference is 8.
+const compareIntegers = (number1, number2) =>{
+  (number1 == 8 || number2 == 8 || (number1 + number2) == 8 || number1 - number2 == 8) ? console.log(true) : console.log(false);
+}
+// compareIntegers(8, 21);
+compareIntegers(15, 15);
+//-------------------------------------------------------------------
+//30.
+// Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit.
+function same_last_digit(p, q, r) {
+    return (p % 10 === q % 10) ||
+           (p % 10 === r % 10) ||
+           (q % 10 === r % 10);
+}
+// console.log(same_last_digit(22,32,42));
+console.log(same_last_digit(20,22,45));
+//-------------------------------------------------------------------
