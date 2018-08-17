@@ -316,7 +316,7 @@ const compareIntegers = (number1, number2) =>{
 // compareIntegers(8, 21);
 compareIntegers(15, 15);
 //-------------------------------------------------------------------
-//30.
+// 30.
 // Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit.
 function same_last_digit(p, q, r) {
     return (p % 10 === q % 10) ||
@@ -326,3 +326,395 @@ function same_last_digit(p, q, r) {
 // console.log(same_last_digit(22,32,42));
 console.log(same_last_digit(20,22,45));
 //-------------------------------------------------------------------
+// 31.
+//Write a JavaScript program to reverse a given string
+const reverseaString = (string) => {
+  //array output
+  console.log(string.split('').reverse()); //reverse =>Array method
+  //string output                            //turn array to string
+  console.log(string.split('').reverse().join(''));
+}
+reverseaString('pajarito');
+//-------------------------------------------------------------------
+//32.
+// Write a JavaScript program to replace every character in a given string with the character following it in the alphabet.
+function replace(str) {
+let newstr = '';
+for (let i = 0; i < str.length; i++) {
+                     //GET ASCII char code from str
+let code = str.charCodeAt(i);
+                  // +1 to every char. and bring the newcharacter
+let newletter = String.fromCharCode(code + 1);
+                  //create the new string , containing new chars.
+newstr += newletter;
+}
+return newstr;
+}
+replace('abcd');
+//-------------------------------------------------------------------
+//33.
+// Write a JavaScript program to capitalize the first letter of each word of a given string.
+const capitalizeLetter = function(string) {
+  let firstLetter = string.slice(0,1).toUpperCase() + string.slice(1, string.length);
+  console.log(firstLetter);
+}
+capitalizeLetter('burro');
+//------------------------------------------------------------------
+//34.
+// Write a JavaScript program to convert a given number to hours and minutes.
+const givenNumber = (num) =>
+ {
+  const hours = Math.floor(num / 60);
+  const minutes = num % 60;
+  return `${hours}:${minutes}`;
+}
+givenNumber(240);
+//-------------------------------------------------------------------
+//35.
+// Write a JavaScript program to convert the letters of a given string in alphabetical order.
+const alphabeticalOrder = (string) => {
+  return string.split('').sort().join();
+}
+alphabeticalOrder('cuando');
+//------------------------------------------------------------------
+//36.
+// Write a JavaScript program to check if the characters a and b are separated by exactly 3 places anywhere (at least once) in a given string.
+const ab_Check = (str) =>
+ {                      //test method
+    return (/a...b/).test(str) || (/b...a/).test(str);
+ }
+ ab_Check('Barcelona');
+ ab_Check('abussadora');
+//-------------------------------------------------------------------
+//37.
+ // Write a JavaScript program to count the number of vowels in a given string.
+ const vowel_Count = (str) =>
+{               //search-value , /(escap) '^'all line 'g' all matches
+  return str.replace(/[^aeiou]/g, "").length;
+}
+console.log(vowel_Count("Pythaeon"));
+//-------------------------------------------------------------------
+//38.
+// Write a JavaScript program to check if a given string contains equal number of p's and t's present.
+const numbertp = (string) => {
+  ((string.replace(/[^p]/g, "").length) === (string.replace(/[^t]/g, "").length)) ? console.log(true) : console.log(false);
+}
+numbertp('papagallotutureador');
+//-------------------------------------------------------------------
+//39.
+// Write a JavaScript program to divide two positive numbers and return a string with properly formatted commas
+const stringFormatted = (num1, num2) => {
+  let number1 = (num1/2).toString();
+  let number2 = (num2/2).toString();
+  let string = `${number1} , ${number2}`;
+  console.log(string);
+}
+stringFormatted(2,9);
+//-------------------------------------------------------------------//40.
+// Write a JavaScript program to create a new string of specified copies (positive number) of a given string.
+const makeCopies = (str, n) => {
+  (n < 0) ?  false : console.log(str.repeat(n));
+}
+makeCopies('pajaro', 5);
+//-------------------------------------------------------------------
+//41
+// Write a JavaScript program to create a new string of 4 copies of the last 3 characters of a given original string. The length of the given string must be 3 and above.
+const makeFcopies = (str, n) => {
+  let finalcopy = str.slice(str.length-3);
+  (str.length >= 3) ? console.log(finalcopy.repeat(n)) : false;
+}
+makeFcopies('arevalo', 4);
+//------------------------------------------------------------------
+//42
+// Write a JavaScript program to extract the first half of a string of even length.
+const evenLength = (str) => {
+  (str.length%2 === 0) ? console.log(str.slice(0, str.length/2)) : console.log("Please type an even string");
+}
+evenLength('Arevalo');
+evenLength('Areval');
+//-------------------------------------------------------------------
+//43
+ // Write a JavaScript program to create a new string without the first and last character of a given string.
+const moreStrings = (str) => {
+  return str.slice(1, str.length -1);
+}
+moreStrings('vacaciones');
+//-------------------------------------------------------------------
+//44.
+// Write a JavaScript program to concatenate two strings except their first character.
+const concatenateStrings = (str1, str2) => {
+  let first = str1.slice(1, str1.length);
+  let second = str2.slice(1, str2.length);
+  return `${first}${second}`
+}
+concatenateStrings('Car','aacnido');
+//-------------------------------------------------------------------
+//45.
+// Write a JavaScript program to move last three character to the start of a given string. The string length must be greater or equal to three.
+const lastTcharacters = (str) => {
+  let lasThree = str.slice(str.length -3);
+  return `${lasThree}${str.slice(0, -3)}`
+}
+lastTcharacters('alibaba');
+//-------------------------------------------------------------------
+//46.
+// Write a JavaScript program to create a string using the middle three characters of a given string of odd length. The string length must be greater or equal to three.
+const middle_three = (str) => {
+   if (str.length % 2!= 0) {
+    mid = (str.length + 1)/2;
+    return str.slice(mid - 2, mid + 1);
+    }
+  return str;
+}
+//------------------------------------------------------------------
+//47.
+// Write a JavaScript program to concatenate two strings and return the result. If the length of the strings are not same then remove the characters from the longer string.
+const concatreturnstrings = (str1, str2) => {
+  //minimun value from both lengths
+  const m = Math.min(str1.length, str2.length);
+  //apply that m
+  return str1.slice(str1.length - m) + str2.slice(str2.length - m);
+}
+concatreturnstrings('ala', 'porca');
+concatreturnstrings('alab', 'porc');
+//-------------------------------------------------------------
+//48.
+// Write a JavaScript program to test if a string end with "Script". The string length must be greater or equal to 6.
+const sixstring = (str) => {
+  (str.length >= 6 && (str.slice(-6) == 'Script' )) ?
+    console.log(true) : console.log(false)
+}
+sixstring('javalcript');
+//---------------------------------------------------------
+//49.
+// Write a JavaScript program to display the city name if the string begins with "Los" or "New" otherwise return blank.
+const cityNames = (str) => {
+  return (str.slice(0,3) == 'Los') || (str.slice(0,3) == 'New') ?  str : ' '
+}
+cityNames('New York');
+cityNames('Barcelona');
+//-------------------------
+//49.1
+// ANOTHER WAY
+function cityStart(city) {
+return city.startsWith('Los') ? city : city.startsWith('New') ? city : '';
+}
+//-----------------------------------------------------------
+// 50.
+// Write a JavaScript program to create a new string from a given string, removing the first and last characters of the string if the first or last character are 'P'. Return the original string if the condition is not satisfied.
+const fromAString = (str) => {
+  return (str.startsWith('P')) ? str.slice(1) :
+  (str.endsWith('P')) ? str.slice(0, str.length - 1) : str;
+}
+fromAString('Palau');
+//----------------------------------------------------------
+// 51.
+// Write a JavaScript program to create a new string using the first and last n characters from a given sting. The string length must be greater or equal to n.
+const cortadoEn = (str, n) => {
+  return (str.length >= n) ? str.slice(0, n) + str.slice(str.length - n) : 'String too short';
+}
+cortadoEn('Caracas', 3);
+//-------------------------------------------------------------
+// 52.
+// Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3.
+const sumOftree = (...nums) => {
+  nums.length = 3;
+  return nums[0] + nums[1] + nums[2];
+}
+sumOftree(4,5,6);
+//--------------------------------------------------------------
+// 53.
+// Write a JavaScript program to rotate the elements left of a given array of integers of length 3.
+const rotateArray = (array) => {
+let first = array[0];
+for (let i = 0; i < array.length; i++) {
+if (i === array.length - 1) {
+array[array.length - 1] = first;
+} else {
+array[i] = array[i+1];
+}
+}
+return array;
+}
+rotateArray([3, 4, 5]);
+//-------------------------------------------------------------
+// 54.
+// Write a JavaScript program to check if 1 appears in first or last position of a given array of integers. The array length must be greater or equal to 1.
+const arrayCheck = (arr) => {
+  return (arr[0] == 1) ? true : (arr[arr.length] == 1) ? true : false;
+}
+arrayCheck([1,2,3]);
+//---------------------------------------------------------------
+// 55.
+// Write a JavaScript program to check if the first and last elements are equal of a given array of integers length 3.
+const arrayCheckII = (arr) => {
+  return (arr[0] === arr[arr.length - 1]) ? true : false;
+}
+arrayCheckII([1,2,3]);
+//-----------------------------------------------------------------
+// 56.
+ // Write a JavaScript program to reverse the elements of a given array of integers length 3.
+ const reversedArray = (arr) => {
+   return (arr.length >= 3) ? arr.reverse() : false;
+ }
+ reversedArray([1,2,3]);
+ //------------------------------------------------------------------// 57.
+// Write a JavaScript program to find the larger value between the first or last and set all the other elements with that value. Display the new array.
+const biggestValue =  arr => {
+  //fill() method fills all elements in an array with a static value.
+  return arr.fill(Math.max(arr[0], arr[arr.length -1])) }
+console.log(biggestValue([1,2,3,9]));
+//-------------------------------------------------------------------
+// 58.
+ // Write a JavaScript program to create a new array taking the middle elements of the two arrays of integer and each length 3.
+const arrayNeoCreated = (arr1, arr2) => {
+return (arr1.length == 3 && arr2.length == 3)? [arr1[1], arr2[1]] : false;
+}
+console.log(arrayNeoCreated([1, 2, 3], [4, 5, 6]));
+//-------------------------------------------------------------------
+// 59.
+// Write a JavaScript program to create a new array taking the first and last elements from a given array of integers and length must be greater or equal to 1.
+const takeMidToArray = (arr1) => {
+return (arr1.length >= 1) ? [arr1[0], arr1[arr1.length -1]] : false;
+}
+console.log(takeMidToArray([1, 2, 3]));
+//-------------------------------------------------------------------
+// 60.
+// Write a JavaScript program to test if an array of integers of length 2 contains 1 or a 3.
+const neoContainumb = (arr) => {
+  return (arr.includes(1)) ? true : (arr.includes(3))  ? true : false;
+}
+neoContainumb([1,9]);
+//-------------------------------------------------------------------
+// 61.
+// Write a JavaScript program to test if an array of integers of length 2 does not contain 1 or a 3
+const is13 = (nums) => {
+  return (nums.indexOf(1) == -1) ? true : (nums.indexOf(3) == -1) ?
+  true : false;
+}
+is13([7, 8]);
+//-------------------------------------------------------------------
+// 62.
+// Write a JavaScript program to swap the first and last elements of a given array of integers.
+const flipArray = arra => {
+  [arra[0], arra[arra.length - 1]] = [arra[arra.length - 1], arra[0]];
+   return arra;
+}
+flipArray([1,2,3,5,6,7,8]);
+//-------------------------------------------------------------------
+// 63.
+// Write a JavaScript program to add two digits of a given positive integer of length two.
+const add_two_digits = (n) => {
+      return n % 10 + Math.floor(n / 10);
+   }
+console.log(add_two_digits(21));
+//-------------------------------------------------------------------
+// 64.
+//Write JavaScript to find the longest string from an given array of strings.
+const test = arr => {
+return arr.reduce((a, b) => a.length > b.length ? a : b);
+}
+console.log(test(['aaa4', 'aaaaa6','vccdcdcs9', ' aaaa 12']))
+//-------------------------------------------------------------------
+// 65.
+// Write JavaScript to replace each character of a given string by the next one in the English alphabet.
+const attemptReplace = str => {
+  let newString = '';
+  for (let i = 0; i < str.length; i++) {
+    // For a & z replacement
+    const addition = str[i] === 'z' ? 'a' : str[i] === 'Z' ? 'A' :
+    // For rest of abcedary
+    String.fromCharCode(str.charCodeAt(i) + 1);
+    newString += addition;
+}
+return newString;
+}
+console.log(attemptReplace('AbCDzZ')); // BcDEaA
+//-------------------------------------------------------------------
+// 66.
+// Write a JavaScript code to divide an given array of positive integers into two parts. First element goes to first part, second element goes to second part, and third element goes to first part and so on. Now compute the sum of two parts and store into an array of size two.
+function sumArrayParts(arr) {
+                  //total/current value/current index/array
+return arr.reduce((accumulator, item, index, list) => {
+if (index % 2 === 0) { accumulator[0] = accumulator[0] + item; }
+else { accumulator[1] = accumulator[1] + item; }
+
+return accumulator;
+
+}, [0, 0]);
+};
+// The reduce() method reduces the array to a single value.
+// The return value of the function is stored in an accumulator (result/total).
+console.log(sumArrayParts([1,2,3,4,5,6]));
+//-------------------------------------------------------------------
+// 67.
+// Write a JavaScript program to find the types of a given angle.
+// Acute angle: An angle between 0 and 90 degrees.
+// Right angle: An 90 degree angle.
+// Obtuse angle: An angle between 90 and 180 degrees.
+// Straight angle: A 180 degree angle.
+const typeAngles = (degrees) => {
+  (degrees > 0 && degrees < 90) ? console.log('Acute Angle') : (degrees === 90) ? console.log('Right Angle') : (degrees === 180) ? console.log('Straight Angle') : (degrees > 90 && degrees < 180) ? console.log('Obtuse Angle') : false;
+}
+typeAngles(90);
+//-------------------------------------------------------------------
+// 68.
+// Write a JavaScript program to check whether two arrays of integers of same length are similar or not. The arrays will be similar if one array can be obtained from another array by swapping at most one pair of elements.
+const checkSameArrays =  (myArray1, myArray2) => {
+return (myArray1.join() == myArray2.join()) ? true : false;
+}
+checkSameArrays([1,2,3,4], [1,2,3,4]);
+checkSameArrays([1,2,3,4], [1,2,3,5]);
+//-------------------------------------------------------------------
+// 69.
+const equalDividendsornot = (dividend1, dividend2, divisor) => {
+  return (dividend1%divisor === dividend2%divisor)? true : false;
+}
+equalDividendsornot(5,10,5);
+equalDividendsornot(5,10,2);
+//-------------------------------------------------------------------
+// 70.
+// Write a JavaScript program to find the kth greatest element of a given array of integers
+function greatest_k(arr, k) {
+arr.sort((a, b) => b - a);
+return arr[k - 1]
+}
+console.log(greatest_k([5300, 3889, 4895, 2648, 9862, 6739], 2));
+//-------------------------------------------------------------------
+// 71.
+// Write a JavaScript program to find the maximum possible sum of its k consecutive numbers (numbers that follow each other in order.) of a given array of positive integers.
+function maxPartArray(arr, k) {
+let maxSum = 0;
+for (let i = 0; i < arr.length - k + 1; i++) {
+  const partSum = arr.slice(i, i+k).reduce((accumulator, item) => {
+    return accumulator + item;
+    },0);
+    maxSum = Math.max(maxSum, partSum);
+  }
+  return maxSum;
+}
+console.log(maxPartArray([884, 772, 066, 12, 567, 456, 874], 3));// 1897
+//-------------------------------------------------------------------
+// 72.
+ // Write a JavaScript program to find the maximal difference between any two adjacent elements of a given array of integers.
+ function maxDiff(arr) {
+   return arr.reduce((accumulator, item, index, list) => {
+     if (index < list.length-1) {
+       return Math.max(accumulator, Math.abs(item - list[index+1]));
+     }
+     return accumulator;
+   },0);
+ }
+ console.log(maxDiff([3,4,5,2,6,11])); // 5
+//-------------------------------------------------------------------
+// 73.
+// Write a JavaScript program to find the maximal difference among all possible pairs of a given array of integers.
+function maxxDiff(arr) {
+const max = Math.max(...arr);
+const min = Math.min(...arr);
+
+return Math.abs(max - min);
+}
+console.log(maxxDiff([3,4,5,2,6,11,23,11,44])); // 42
+//-------------------------------------------------------------------
+// 74.
