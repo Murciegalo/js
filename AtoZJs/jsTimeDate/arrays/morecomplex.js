@@ -211,15 +211,171 @@ return result;
 console.log(primes(34)); // [2,3,5,7,11,13,17,19,23,29,31]
 //-------------------------------------------------------------------
 // 85.
+// Write a JavaScript program to find the number of even values in sequence before the first occurrence of a given number.
+function evensBefore(arr, num) {
+  let result = [];
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr[i] === num) { break; }
+    if ( arr[i] % 2 === 0 ) { result.push(arr[i]);}
+  }
+return result.length;
+}
+console.log(evensBefore([3, 5, 1, 8, 6, 34, 10], 34)); // 2s
 //-------------------------------------------------------------------
 // 86.
+// Write a JavaScript program to check a number from three given numbers where two numbers are equal, find the third one.
+const thirdNumber = (arr) => {
+  let result =[];
+  for (let i = 0; i <arr.length;  i++) {
+    (arr[i] === arr[i +1]) ? console.log(`Equal numbers on ${arr[i]}`) : result.push(arr[i]);
+  }
+}
+thirdNumber([1,2,2,3,3,4]);
 //-------------------------------------------------------------------
 // 87.
+// Write a JavaScript program to calculate the sum n + n/2 + n/4 + n/8 + ....
+const sumIntegers = (num, divisor) => {
+  return (divisor%2 === 0) ? (num + num/divisor) : 'Sorry, not an integer';
+}
+sumIntegers(8, 4);
 //-------------------------------------------------------------------
 // 88.
+// Write a JavaScript program to check whether a given string represents a correct sentence or not. A string is considered correct sentence if it starts with the capital letter and ends with a full stop (.).
+function is_correct_Sentence(input_str) {
+    const first_char = input_str[0];
+    const last_char = input_str[input_str.length - 1];
+    return /[A-Z]/.test(first_char) && last_char == "."
+}
+is_correct_Sentence('La baina loca.');
 //-------------------------------------------------------------------
 // 89.
+// Write a JavaScript program to find all the possible options to replace the hash in a string (Consists of digits and one hash (#)) with a digit to produce an integer divisible by 3.
+// For a string "2*0", the output should be : ["210", "240", "270"]
+const diagonalMatrix = (arr,arr2,arr3) => {
+  return (arr2[0] == 0) && (arr2[2] == 0) ? true : false;
+}
+diagonalMatrix( [1, 0, 0], [0, 2, 0], [0, 0, 3] );
 //-------------------------------------------------------------------
 // 90.
+// Write a JavaScript program to find all the possible options to replace the hash(#) in a string  into an integer divisible by 3.
+// For a string "2*0", the output should be : ["210", "240", "270"]
+function findInts(str) {
+  let result = [];
+  for ( let i = 0; i <= 9; i++ ) {
+    const newStr = str.replace(/#/, i);
+    if (parseInt(newStr) % 3 === 0) {
+      result.push(newStr);
+    }
+  }
+  return result;
+}
+console.log(findInts('7#9')); // ["729","759","789"]
 //-------------------------------------------------------------------
 // 91.
+const range = (number , range) => {
+  return (number > range[0]) && (number < range[1]) ? true : false;
+}
+range(5, [1,7]);
+//-------------------------------------------------------------------
+// 92.
+// Write a JavaScript program to check if a given integer has an increasing digits sequence.
+function hasIncreasingDigits(num) {
+  while (num > 9) {
+    if ( num % 10 < (num / 10) % 10 ) { return false; }
+    num /=  10;
+  }
+return true;
+}
+hasIncreasingDigits(1589); // true
+//-------------------------------------------------------------------
+// 93.
+// Write a JavaScript program to find the longest string from a given array.
+function longestMember(arr) {
+  return arr.reduce((accumulator, item, index, list) => {
+    if ( index === 0 ) { accumulator = item; }
+    if (index > 0 && item.length > list[index - 1].length) {
+      accumulator = item;
+    }
+    return accumulator;
+  },'');
+}
+console.log(longestMember(['Constantijn', 'Baarendse', 'Mediaaaaaaaaaaaaaaaaaaaaa']));
+console.log(longestMember(['Baarendse', 'Media', 'Constantijn'])); // Constantijn
+//-------------------------------------------------------------------
+// 94.
+// Write a JavaScript program to get the largest even number from an array of integers
+const largestEven = (arr) => {
+  return arr.reduce((accumulator, item, index, list) =>{
+    if(index === 0) {accumulator = item;}
+    if(index > 0 && item%2 != 0) {
+      accumulator = Math.max(item);
+    }
+    return accumulator;
+  }, '');
+}
+console.log(largestEven([1,22, 33, 35, 7, 15, 37]));
+//-------------------------------------------------------------------
+// 95.
+// Write a JavaScript program to find the smallest round number that is not less than a given value.
+function nearest_round_number(num) {
+    while (num % 10) {
+        num++;
+    }
+    return num;
+}
+console.log(nearest_round_number(56));
+//-------------------------------------------------------------------
+// 96.
+// Write a JavaScript program to find the smallest prime number strictly greater than a given number.
+function smallestBiggerPrime(num) {
+function isPrime(int) {
+  if ( int === 0 || int === 1 ) { return false; }
+  if ( int === 2 ) { return true; }
+  for ( let i = 2; i < int; i++ ) {
+    if ( int % i === 0 ) { return false; }
+  }
+  return true;
+}
+let p = num + 1;
+while ( !isPrime(p) ) { p++; }
+return p;
+}
+//-------------------------------------------------------------------
+// 97.
+// Write a JavaScript program to check whether a given fraction is proper or not.
+const givenFranction = (num, num2) => {
+  return (num < num2) ? 'Proper' : 'Improper';
+}
+givenFranction(3,6);
+givenFranction(6,3);
+//-------------------------------------------------------------------
+// 98.
+// Write a JavaScript program to change the characters (lower case) in a string where a turns into z, b turns into y, c turns into x, ..., n turns into m, m turns into n, ..., z turns into a.
+
+//-------------------------------------------------------------------
+// 99.
+// Write a JavaScript program to remove all characters from a given string that appear more than once
+
+//-------------------------------------------------------------------
+// 100.
+// Write a JavaScript program to replace the first digit in a string (should contains at least digit) with $ character.
+const replaceFdigit = (str) => {
+  return (str.length > 1) ? str.replace(str[0], '$') : str;
+}
+replaceFdigit('Aleluya');
+//-------------------------------------------------------------------
+// 101.
+// Write a JavaScript program to test if a given integer is greater than 15 return the given number, otherwise return 15
+
+const greaterF = num => {
+  return (num % 2 == 0) && (num > 15) ? num : 15;
+}
+greaterF(30);
+//-------------------------------------------------------------------
+// 102.
+// Write a JavaScript program to change the capitalization of all letters in a given string.
+const toUpcase = str => {
+  return str.toUpperCase();
+}
+toUpcase('florero');
+//-------------------------------------------------------------------
