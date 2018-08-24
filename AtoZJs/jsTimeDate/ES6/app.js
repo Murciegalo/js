@@ -276,3 +276,69 @@ function abc() {
     console.log( arguments.callee.name );
 }
 abc();
+//------------------------RECURSIONS---------------------------------
+// 1.
+// Write a JavaScript program to calculate the factorial of a number.
+const factorialNumber = num => {
+  return (num === 1) ? 1 : num * factorialNumber(num-1);
+}
+factorialNumber(5);
+// 2.  --------------------------------------------------------------
+const gcd = (a, b) => {
+    if ( ! b) {
+        return a;
+    }
+    return gcd(b, a % b);
+};
+console.log(gcd(750, 250));
+// 3. ---------------------------------------------------------------
+// Write a JavaScript program to get the integers in range (x, y).
+const intsInRange = (a, b) => {
+  a++;
+  if (a === b - 1) { return [a]; }
+  return `${[a]},${intsInRange(a, b)}`;
+}
+console.log(intsInRange(2,9)); // [3,4,5,6,7,8]
+console.log(intsInRange(3,10)); // [4,5,6,7,8,9]
+// 4. ---------------------------------------------------------------
+// Write a JavaScript program to compute the sum of an array of integers.
+const computeArray = (arr) =>{
+  return arr.reduce((accumulator, item, index, list) => {
+    return accumulator + item;
+  }, 0)
+}
+computeArray([1,2,3]);
+// 5. ---------------------------------------------------------------
+// Write a JavaScript program to compute the exponent of a number.
+const exponentCompute = (base, exp) => {
+  return (exp == 0) ? 1 : base * expo(base, exp - 1);
+}
+exponentCompute(8 , 3);
+//6.-----------------------------------------------------------------
+// Write a JavaScript program to check whether a number is even or not.
+const doublecheck = number =>{
+  return (number%2 == 0) ? true : false;
+}
+doublecheck(6);
+doublecheck(7);
+//APPLYING RECURSION
+    const isEven = n => {
+      if (n === 0)
+        return true
+      if (n === 1)
+        return false
+    return n > 0 ? isEven(n - 2) : isEven(n + 2)
+}
+// 7. ---------------------------------------------------------------
+// Write a JavaScript program for binary search.
+Array.prototype.binarySearch = function(n) {
+  if (this.length === 1) { return this[0] === n ? n : undefined; }
+  let arr = this.slice(0,this.length / 2);
+  if (arr.indexOf(n) === -1) {
+    arr = this.slice(this.length / 2,);
+  }
+return arr.binarySearch(n);
+}
+
+console.log([2,6,8,4,34,1,22,43,7].binarySearch(5)) // undefined
+console.log([2,6,8,4,34,1,22,43,7].binarySearch(8)) // 8
