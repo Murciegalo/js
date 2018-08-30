@@ -12,18 +12,18 @@ const binaryConverter = (num, base) =>{
   'Sorry';
 }
 binaryConverter(120, 'B');
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 // 4. Write a JavaScript function to generate a random integer.
 const random = num =>{
   return Math.floor(Math.random() * num);
 }
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 // 5. Write a JavaScript function to format a number up to specified decimal places.
 const formatDecimals = (num , y) =>{
   return  num.toFixed(y);  //to Fixed decimals on numbers
 }
 formatDecimals(5432 , 2);
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 // 6. Write a JavaScript function to find the highest value in an array.
 const highestValue = arr =>{
   const cleaned = [];
@@ -35,13 +35,13 @@ const highestValue = arr =>{
   }, 0)
 }
 highestValue([2,6,7,'a', 'b']);
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 // 7. Write a JavaScript function to find the lowest value in an array.
 const lowestValue = arr =>{
   return Math.min(...arr);
 }
 lowestValue([1,0, -1, 8]);
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 // 8. Write a JavaScript function to get the greatest common divisor (gcd) of two integers.
 const greatestCD = (a, b) =>{
   let max = Math.max(a,b);
@@ -49,21 +49,21 @@ const greatestCD = (a, b) =>{
   return (max%min === 0) ? min: greatestCD(max,min-1);
 }
 greatestCD(3,9);
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 // 10. Write a JavaScript function to get the least common multiple (LCM) of two numbers.
 const smallestCM = (a,b) => {
   return (Math.min(a,b)%Math.min(a,b) === 0) ?
   (Math.min(a * b)/Math.min(a,b)) : 'NaN';
 }
 smallestCM(3,9);
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 // 11. Write a JavaScript function to find out if a number is a natural number or not.
 const naturalNumber = n => {
   return (n > 0 && Number.isInteger(n)) ? n : "Not natural number";
 }
 naturalNumber(5);
 naturalNumber(4.3);
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 //12. Write a JavaScript function to test if a number is a power of 2.
 const multipleDue = nr => {
   while(typeof nr == 'number' && nr > 1){
@@ -71,7 +71,7 @@ const multipleDue = nr => {
   }
 }
 multipleDue(5);
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 // 13. Write a JavaScript function to round a number to a given decimal places
 const roundi = (number, fix) =>{
   while(typeof number == 'number' && typeof fix == 'number'){
@@ -79,7 +79,7 @@ const roundi = (number, fix) =>{
     }
 }
 roundi(34.5673, 2);
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 // 14. Write a JavaScript function to check whether a value is an integer or not.
 const integerCheck = num =>{
   while( typeof num == 'number'){
@@ -87,7 +87,7 @@ const integerCheck = num =>{
     }
 }
 integerCheck(4);
-//--------------------------------------------------------------------
+//-------------------------------------------------------------------
 // 15. Write a JavaScript function to check to check whether a variable is numeric or not.
 const isNumeric = x =>{
     return (typeof x == 'number') ? true : false;
@@ -209,5 +209,52 @@ const commas = num =>{
    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
    return num_parts.join(".");
 }
-commas('5165432');
+commas(5165432);
 //-------------------------------------------------------------------
+ // Write a JavaScript function to create random background color.
+ const randomColor = () =>{
+   let random = Math.floor(Math.random()* 255);
+   let random2 = Math.floor(Math.random()* 255);
+   let random3 = Math.floor(Math.random()* 255);
+   let rgb = `rgb(${random},${random2},${random3})`;
+   console.log(rgb);
+   document.body.style.background = rgb;
+ }
+randomColor();
+//-------------------------------------------------------------------
+// Write a JavaScript function to count the digits of an integer.
+const digitsCounter = num =>{
+  return num.toString().length;
+}
+digitsCounter(123);
+//-------------------------------------------------------------------
+// Write a JavaScript function to get all prime numbers from 0 to a specified number.
+const allPrime = n =>{
+  for (let i = 1; i <= n;  i++){
+      (i%2 != 0) ? console.log(i) : ' ';
+  }
+}
+allPrime(21);
+//------------------------------------------------------------------
+// Write a JavaScript function to subtract elements from one another in an array.
+const arraySubtractor = (arr) =>{
+  let result = arr.splice(0,1);
+  console.log(result);
+}
+const tesa = [1,2,3,4,5];
+arraySubtractor(tesa);
+//------------------------------------------------------------------
+// Write a JavaScript function to calculate the divisor and modulus of two integers.
+const modulusNumber = (n, b) =>{
+  var arr=[];
+  arr.push(Math.floor(n/b), n%b);
+  return arr;
+}
+modulusNumber(4,8);
+//------------------------------------------------------------------
+// Write a JavaScript function to calculate the extended Euclid Algorithm or extended GCD.
+const EuclidAlgorithm = (a, b) =>{
+  return Math.floor(a%b);
+}
+EuclidAlgorithm(-4,8);
+//----------------------------------------------------------------
