@@ -69,8 +69,7 @@ swap = str => {
   return s.join('')
 }
 console.log(swap('abcDED'));
-//--------------------------------------------
-// ANOTHER WAY----------------------
+//----------ANOTHER WAY---------
 function switchCase(str) {
   return str.split('')
     .reduce((acc,item) =>
@@ -80,3 +79,68 @@ function switchCase(str) {
   }
 console.log(switchCase('The Quick Brown Fox'));
 //-----------------------------------------------------------------
+// 10. Write a JavaScript program which prints the elements of the following array.
+const a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+const arrLooperPrinter = (arr) =>{
+  for (let i in a){
+    console.log(`row ${i}`);
+    for (let j in a[i]){
+      console.log(" " + a[i][j]);
+    }
+  }
+}
+// arrLooperPrinter(a);
+//------------------------------------------------------------------
+// 11. Write a JavaScript program to find the sum of squares of a numeric vector.
+const squareVector = (arr) =>{
+  return arr.reduce((acc,itm,idx,list)=>{
+    return acc += Math.pow(itm, 2);
+  }, 0);
+}
+squareVector([0, 1, 2, 3, 4]);
+//--------------------------------------------------------------
+// 12. Write a JavaScript program to compute the sum and product of an array of integers.
+const sumOfArra = arr => {
+  return arr.reduce((acc,itm,idx,list) =>{ return acc += itm;}, 0);}
+const productOfArra = arr =>{
+  return arr.reduce((acc,itm,idx,list)=>{ return acc* itm;},)}
+productOfArra([1, 2, 3, 4, 5, 6]);
+sumOfArra([1, 2, 3, 4, 5, 6]);
+//-------------------------------------------------------------
+// 13. Write a JavaScript program to add items in an blank array and display the items.
+// STOCK
+const storage = {
+  data : []
+}
+// UI SAVERS
+const itemsU = document.querySelector('ul');
+console.log(itemsU)
+// ROUTINES
+const stockmanager = () => {
+    const items = document.querySelector('[name=text1]');
+    storage.data.push(items.value);
+    items.value = " ";
+    console.log(storage);
+    // a closure to be added
+    // listMaker();
+}
+// UI DISPLAYER
+const listMaker = () => {
+  let node = document.createElement('LI');  // Li Node
+  itemsU.appendChild(node).innerHTML = storage.data;
+  // storage.data = [];
+}
+
+// HANDLERS
+document.querySelector('#add').addEventListener('click', stockmanager);
+document.querySelector('#display').addEventListener('click', listMaker);
+//-----------------------------------------------------------------
+// 14. Write a JavaScript program to remove duplicate items from an array (ignore case sensitivity).
+const arrforDuplicates = [1, 2, 2, 4, 5, 4, 7, 8, 7, 3, 6];
+const duplicateDeleter = arr => {
+    return arr.filter(function(value, index){
+          return arr.indexOf(value) == index;
+    });
+}
+duplicateDeleter(arrforDuplicates);
+//----------------OTHER GOOD WAY------
