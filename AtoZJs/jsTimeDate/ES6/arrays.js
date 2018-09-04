@@ -139,7 +139,7 @@ document.querySelector('#display').addEventListener('click', listMaker);
 const arrforDuplicates = [1, 2, 2, 4, 5, 4, 7, 8, 7, 3, 6];
 const duplicateDeleter = arr => {
     return arr.filter(function(value, index){
-          return arr.indexOf(value) == index;
+          return arr.indexOf(value) == index; //filter
     });
 }
 duplicateDeleter(arrforDuplicates);
@@ -221,3 +221,124 @@ checkForDuplicates([1, 2, 2, 4, 5, 4, 7, 8, 7, 3, 6]);
 //--------------------------------------------------------------------------
 // 21.
 // 22. Write a JavaScript program to compute the union of two arrays.
+const joinArr = (a, b) =>{
+  return a.concat(b);
+}
+joinArr([1, 2, 3], [100, 2, 1, 10]);
+//------------------------------------------------------------------------
+// 23. Write a JavaScript function to find the difference of two arrays.
+function differencesFinder(arr1, arr2) {
+    let arr = arr1.concat(arr2);
+    return arr.filter((val, index) =>
+    arr.indexOf(val) === arr.lastIndexOf(val)); //filter applied
+  }
+differencesFinder([1, 2, 3], [100, 2, 1, 10]);
+//------------------------------------------------------------------------
+// 24. Write a JavaScript function to remove. 'null', '0', '""', 'false', 'undefined' and 'NaN' values from an array.
+const sample = [NaN, 0, 15, false, -22, '',undefined, 47, null]
+// Expected: [15, -22, 47]
+const mamaFilter = arr =>{
+  return arr.filter((value) => value); //filter array just by its values
+}
+mamaFilter(sample);
+//-------------------------------------------------------------------------
+// 25. Write a JavaScript function to sort the following array of objects by title value.
+const library = [
+   { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+   { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+   { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
+   ];
+   function sortByTitle(arr) {
+   return arr.sort((a, b) => {
+   return a.title > b.title;
+   });
+   }
+console.log(sortByTitle(library));
+//--------------------------------------------------------------------------
+// 26. Write a JavaScript function to retrieve the value of a given property from all elements in an array
+const sampleDue = [NaN, 0, 15, false, -22, '',undefined, 47, null];
+// Expected result : [15, -22, 47]
+const mumFilter = arr =>{return arr.filter((value) => value);}
+mumFilter(sampleDue);
+//-------------------------------------------------------------------------
+// 28. Write a JavaScript function to find the longest common starting substring in a set of strings.
+function commonSubstring(arr) {
+    let newStr = "";
+    const str1 = arr[0];
+    const str2 = arr[1];
+    for (let i = 0; i < str1.length; i++) {
+        while (str1[i] === str2[i]) {
+            newStr += str1[i];
+            break;
+        }
+    }
+    return newStr;
+}
+console.log(commonSubstring(['go', 'google'])); // go
+console.log(commonSubstring(['SQLInjection', 'SQLTutorial'])); // SQL
+console.log(commonSubstring(['abcd', '1234']));
+//--------------------------------------------------------------------------
+// 29. Write a JavaScript function to fill an array with values (numeric, string with one character) on supplied bounds.
+const filler = arr =>{
+  let numeric = Math.floor(Math.random() * 97);
+  arr += arr.push(numeric);
+  arr.length = 20;
+  return arr;
+}
+filler(['a', "z", 2]);
+//--------------------------------------------------------------------------
+// 30. Write a JavaScript function to merge two arrays and removes all duplicates elements
+const merga1 = [1, 2, 3];
+const merga2 = [2, 30, 1];
+const mergiRemove = (arr1, arr2) =>{
+  let result = arr1.concat(arr2);
+  return result.filter((value,index) => {
+    return result.indexOf(value) === index;
+  });
+}
+mergiRemove([1, 2, 3],[2, 30, 1]);
+//-------------------------------------------------------------------------
+// 31. Write a JavaScript function to remove a specific element from an array.
+const specificRemove = (arr, n) =>{
+  let index = arr.indexOf(n);
+  arr.splice(index,1);
+  return arr
+}
+specificRemove([2,4,8,17,16, 5, 9, 6], 5);
+//---------------------------------------------------------------------------
+// 32. Write a JavaScript function to find where an array contains an specific element or not.
+const elementFinder = (arr, n) =>{
+  return (arr.indexOf(n) == -1) ? false : true;
+}
+elementFinder([2,4,8,17,16, 5, 9, 6], 5);
+//--------------------------------------------------------------------------
+// 34. Write a JavaScript function to get nth largest element from an unsorted array.
+const specificG = (arr, n) =>{
+  return arr.splice(n-1,1);
+}
+specificG([2,4,8,17,16, 5, 9, 6], 5);
+//-------------------------------------------------------------------------
+// 35. Write a JavaScript function to get a random item from an array.
+const randomG = (arr, n) =>{
+  n = Math.floor(Math.random()* arr.length);
+  return arr.splice(n-1,1);
+}
+randomG([2,4,8,17,16, 5, 9, 6], );
+//-------------------------------------------------------------------------
+// 36. Write a JavaScript function to create a specified number of elements with pre-filled numeric value array.
+const pusher = (num, val) =>{
+  let a = new Array(num);
+  return a.fill(val);
+}
+pusher(5, 8);
+//-------------------------------------------------------------------------
+// 37. Write a JavaScript function to create a specified number of elements with pre-filled string value array.
+const pusherII = (num, val) => {
+  if(typeof(val) === 'string'){
+    let b = new Array(num);
+    return b.fill(val);
+  }
+}
+pusherII(5,'la');
+//---------------------------------------------------------------------------
+// 40. 
