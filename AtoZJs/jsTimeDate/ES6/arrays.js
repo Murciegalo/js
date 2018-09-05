@@ -341,4 +341,35 @@ const pusherII = (num, val) => {
 }
 pusherII(5,'la');
 //---------------------------------------------------------------------------
-// 40. 
+// 40. Write a JavaScript function to generate an array of specified length, filled with integer numbers, increase by one from starting position.
+const array_range = (start, len) => {
+		let arr = new Array(len);
+		for (let i = 0; i < len; i++, start++) {
+			arr[i] = start;
+		}
+      		return arr;
+}
+console.log(array_range(1, 4));
+console.log(array_range(-6, 4));
+//-------------------------------------------------------------------------
+// 41. Write a JavaScript function to generate an array between two integers of 1 step length.
+function rangeBetwee(a, b) {
+    const arr = [];
+    let max = Math.max(a, b);
+    let diff = Math.abs(a - b) + 1;
+    while (diff--) {
+        arr[diff] = max--;
+    }
+    return arr;
+}
+console.log(rangeBetwee(-4, 7));//[-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
+console.log(rangeBetwee(10, -2));//[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//------------------------------------------------------------------------
+// 42. Write a JavaScript function to find the unique elements from two arrays.
+const uniqueSelector = (arr1, arr2) => {
+  let result = arr1.concat(arr2);
+  return result.filter((value, index) => {
+    return result.indexOf(value) === index; //return elements which meet this filter
+  });
+}
+uniqueSelector([1, 2, 3], [100, 2, 1, 10]);
