@@ -146,22 +146,59 @@ const truncator = (str, n, str2) => {
 console.log(truncator('We are doing JS string exercises.',15,'!!'))
 console.log(truncator('We are doing JS string exercises.',19))
 //-----------------------------------------------------------------------
-
+// 17. Write a JavaScript function to chop a string into chunks of a given length.
+const stringChop = (str, n) =>{
+  if(str == null) return [];
+  return (n > 0) ? str.match(new RegExp('.{1,' + n + '}', 'g')) : [str];
+  }
+console.log(stringChop('w3resource',2));
 //-----------------------------------------------------------------------
-
+// 18. Write a JavaScript function to count the occurrence of a substring in a string.
+const countSubs = (str, substr) => {
+    str = str.split(" ");
+    console.log(str)
+    return str.filter(value => value.toLowerCase() === substr).length;
+}
+console.log(countSubs("The quick brown the fox jumps over the lazy dog", 'the'));
 //-----------------------------------------------------------------------
-
+// 20. Write a JavaScript function that can pad (left, right) a string to get to a determined length.
+const formatString = (topping, string, pos) =>{
+  if(typeof string === 'undefined'){ return topping;}
+  return (pos.toLowerCase() === 'l') ?
+      (topping + string).slice(-topping.length) :
+      (string + topping).slice(0, topping.length);
+}
+console.log(formatString('0000',123,'l'));
+console.log(formatString('00000000',123,''));
 //-----------------------------------------------------------------------
-
+// 21. Write a JavaScript function to repeat a string a specified times.
+const repeater = (str, n) =>{
+  if ((str == null) || (n < 0) || (n === Infinity) ||
+  (n == null)) {
+      return('Error in string or count.');
+  }
+  return str.repeat(n);
+}
+console.log(repeater('Loca', 5));
 //-----------------------------------------------------------------------
-
+// 22. Write a JavaScript function to get a part of a string after a specified character.
+const specificChop = (str, c) => {
+  return str.slice(0 ,str.indexOf(c));
+}
+console.log(specificChop('w3resource: JavaScript Exercises', ':'));
+console.log(specificChop('w3resource: JavaScript Exercises', 'E'));
 //-----------------------------------------------------------------------
-
+// 23. Write a JavaScript function to strip leading and trailing spaces from a string.
+const trailing = str => { return str.trim(); }
+trailing('  w3resource    ');
 //-----------------------------------------------------------------------
-
+// 24. Write a JavaScript function to truncate a string to a certain number of words.
+const stringTruncator = (str, n) =>{
+    return str.split(' ').slice(0, n).join(' ');
+}
+console.log(stringTruncator('The quick brown fox jumps over the lazy dog', 4));
 //-----------------------------------------------------------------------
-
-//-----------------------------------------------------------------------
+// 25. Write a JavaScript function to alphabetize a given string.
 
 //-----------------------------------------------------------------------
 
