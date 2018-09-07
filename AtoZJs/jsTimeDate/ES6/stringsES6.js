@@ -199,42 +199,158 @@ const stringTruncator = (str, n) =>{
 console.log(stringTruncator('The quick brown fox jumps over the lazy dog', 4));
 //-----------------------------------------------------------------------
 // 25. Write a JavaScript function to alphabetize a given string.
-
+const alphabet = (str) => { return str.split('').sort().join('').trim()};
+console.log(alphabet('United States'));
 //-----------------------------------------------------------------------
-
+// 26. Write a JavaScript function to remove the first occurrence of a given 'search string' from a string.
+const removeFOccurrence = (str, occu) => {
+    str = str.split(' ');
+    return str.filter(value => value !== occu).join(' ');
+  // return str.replace(occu,' ');
+}
+console.log(removeFOccurrence("The quick brown fox jumps over the lazy dog", 'the'));
 //-----------------------------------------------------------------------
-
+// 27. Write a JavaScript function to find a word within a string.
+const foundCounter = (str, searcher) =>{
+    str = str.split(' ');
+    return `${searcher} was found ${str.filter(value => value ===     searcher).length} times.`
+}
+console.log(foundCounter('The quick brown fox', 'fox'));
 //-----------------------------------------------------------------------
-
+// 30. Write a JavaScript function to check if a string ends with specified suffix.
+const suffixChecker = (str, checker) => {
+  let len = str.split(' ').length -1;
+  return (str.split(' ')[len] === checker) ? true : false;
+}
+console.log(suffixChecker('JS PHP PYTHON','PYTHON'));
+// ANOTHER WAY  ANOTHER WAY ANOTHER WAY
+const suffixCheckerII = (str, check) => {
+    return (str.endsWith(check)) ? true : false;  }
+console.log(suffixCheckerII('JS PHP PYTHON','PYTON'));
 //-----------------------------------------------------------------------
-
+// 31. Write a function to remove >> [non-printable ASCII chars]
+const spcharsRemover = (str) =>{
+    return ((str===null) || (str==='')) ?  false :
+    str.replace(/[^\x20-\x7E]/g, '');
+}
+console.log(spcharsRemover('äÄçÇéÉêPHP-MySQLöÖÐþúÚ'));
 //-----------------------------------------------------------------------
-
+// 32. Write a JavaScript function to remove non-word characters.
+const nwcharsRemover = (str) =>{
+    return ((str===null) || (str==='')) ?  false :
+    str.replace(/[^\w\s-]/g, "");
+}
+console.log(nwcharsRemover('PHP ~!@#$%^&*()+`-={}[]|\\:";\'/?><., MySQL'));
 //-----------------------------------------------------------------------
-
+// 34. Write a JavaScript function to convert a string to title case.
+const ucConverter = str => {
+    if ((str===null) || (str==='')) return false;
+    else
+        str = str.toString();
+        return str.replace(/\w\S*/g, function(txt){
+          return txt.charAt(0).toUpperCase() +                  txt.substr(1).toLowerCase();
+        });
+}
+console.log(ucConverter('PHP exercises. python exercises.'));
 //-----------------------------------------------------------------------
-
+// 35. Write a JavaScript function to remove HTML/XML tags from string.
+const tagsRemover = str =>{
+    if ((str===null) || (str===''))  return false;
+    else
+        str = str.toString();
+        return str.replace(/<[^>]*>/g, '');
+}
+console.log(tagsRemover('<p><strong><em>PHP Exercises</em></strong></p>'));
 //-----------------------------------------------------------------------
-
+// 36. Write a JavaScript function to test case insensitive (except special Unicode characters) string comparison.
+const stringsComper = (str1, str2) => {
+    return(str1.toUpperCase() === str2.toUpperCase()) ? true : false;
+}
+console.log(stringsComper('abcd', 'AbcD'));
+console.log(stringsComper('ABCD', 'Abce'));
 //-----------------------------------------------------------------------
-
+// 37. Write a JavaScript function to create a case-insensitive search
+// 38. Write a JavaScript function to Uncapitalize the first character of a string.
+const uncapitalizeString = str => { return str[0].toLowerCase() + str.slice(1);}
+console.log(uncapitalizeString('Js string exercises'));
 //-----------------------------------------------------------------------
-
+// 40. Write a JavaScript function to Uncapitalize the first letter of each word of a string.
+ const firstUncapitalize = str => {
+   if ((str===null) || (str==='')) return false;
+   else
+       str = str.toString();
+       return str.replace(/\w\S*/g, function(txt){
+         return txt.charAt(0).toLowerCase() +                  txt.substr(1).toLowerCase();
+       });
+ }
+ console.log(firstUncapitalize('Js String Exercises'));
 //-----------------------------------------------------------------------
-
+// 41. Write a JavaScript function to capitalize each word in the string.
+const capitalizeConverter = str => { return str.toUpperCase();}
+console.log(capitalizeConverter('js string exercises'));
 //-----------------------------------------------------------------------
-
-
+// 42. Write a JavaScript function to uncapitalize each word in the string.
+const uncapitalizeAll = str => { return str.toLowerCase();}
+console.log(uncapitalizeAll('JS STRING EXERCISES'));
 //-----------------------------------------------------------------------
-
+// 43. Write a JavaScript function to test whether the character at the provided (character) index is upper case.
+const uppercaseTester = (str, n) => {
+  return ((str[n]) === str[n].toUpperCase()) ? true : false;
+}
+console.log(uppercaseTester('Js STRING EXERCISES', 1));
 //-----------------------------------------------------------------------
-
+// 44. Write a JavaScript function to test whether the character at the provided (character) index is lower case.
+const lowercaseTester = (str, n) => {
+  return ((str[n]) === str[n].toLowerCase()) ? true : false;
+}
+console.log(lowercaseTester('Js STRING EXERCISES', 1));
 //-----------------------------------------------------------------------
-
+// 45. Write a JavaScript function to get humanized number with the correct suffix such as 1st, 2nd, 3rd or 4th.
+const humanizeNumber = (number) =>{
+  let hcode = ['th', 'st', 'nd', 'rd'];
+  let last = String(number).substr(-1);   //ending number
+  for (let i = 0;   i< hcode.length;  i++){
+    return (last < 4) ? number + hcode[last] : number + hcode[0];
+  }
+};
+console.log(humanizeNumber(1));
+console.log(humanizeNumber(25));
+console.log(humanizeNumber(302));
 //----------------------------------------------------------------------
-
+// 46. Write a JavaScript function to test whether a string starts with a specified string.
+const beginChecker = (str, check) => {
+  return (str.startsWith(check)) ? true : false;
+}
+console.log(beginChecker('js string exercises', 'js'));
 //-----------------------------------------------------------------------
-
+// 47. Write a JavaScript function to test whether a string ends with a specified string.
+const endingChecker = (str, check) => {
+  return (str.endsWith(check)) ? true : false;
+}
+console.log(endingChecker('js string exercises', 'js'));
+console.log(endingChecker('js string exercises', 'exercises'));
 //----------------------------------------------------------------------
-
+// 48. Write a JavaScript function to get the successor of a string.
+const successor = (str) =>{
+  let last = str.charCodeAt(str.length-1) + 1; //get last one
+  let res = String.fromCharCode(last); //give me its next one
+  str = str.substring(0, str.length -1); //put all together
+  return str + res;
+};
+console.log(successor('abcf'));
+console.log(successor('3457'));
+//-----------------------------------------------------------------------
+// 49. Write a JavaScript function to get unique guid (an acronym for 'Globally Unique Identifier?) of the specified length, or 32 by default.
+const guiD = n =>{
+  const buf = [],
+       chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
+       charlen = chars.length,
+       length = len || 32;
+   for (var i = 0; i < length; i++) {
+       buf[i] = chars.charAt(Math.floor(Math.random() * charlen));
+   }
+   return buf.join('');
+}
+console.log(guid());
+console.log(guid(15));
 //-----------------------------------------------------------------------
