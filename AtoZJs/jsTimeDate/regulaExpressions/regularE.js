@@ -14,11 +14,11 @@ const creditCchecker = (number) => {
 console.log(creditCchecker("1234 - 1234 - 1234 - 1234"));
 console.log(creditCchecker("1234 - 1234 - 1234 - 1234 - 1234"));
 //-----------------------------------------------------------------------
-// 3. Write a pattern that matches e-mail addresses.
-// Uppercase (A-Z) and lowercase (a-z) English letters.
-// Digits (0-9).
-// Characters ! # $ % & ' * + - / = ? ^ _ ` { | } ~
-// . (period, dot) provided not in the first or last character and not one after the other.
-const mailValidator = (mail) =>{
+//DOM
+// 1. Here is a sample html file with a submit button. Now modify the style of the paragraph text through javascript code.
+let p = document.querySelector('#text');
+const textStyle = () => {
+
 }
+
 //-----------------------------------------------------------------------
