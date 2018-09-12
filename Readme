@@ -1,2 +1,8 @@
 JavaScript projects since the beginning till end (Applications developed -> Budget, pig game and listApp)
 
+
+
+REGULAR EXPRESSIONS PATTERNS
+
+- non-printable ASCII characters>>>> /[^\x20-\x7E]/g
+
