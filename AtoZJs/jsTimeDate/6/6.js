@@ -151,3 +151,28 @@ const arrBuilder = (min, max, n = 1) =>
     Array.from({length : n} , () => Math.floor(Math.random() * (max - min)) + min);
 console.log(arrBuilder(1, 20, 10));
 //---------------------------------------------------------
+// 36. Write a JavaScript program to get a sorted array of objects ordered by properties.
+//----------------------------------------------------------
+// 37. Write a JavaScript program to pad a string on both sides with the specified character, if it's shorter than the specified length.
+const padder = str => {
+  let spec = '$';
+  return (str.length < 5) ? `${spec}${str}${spec}` : ''
+}
+console.log(padder('abc'));
+console.log(padder('abcde'))
+//-------------------------------------------------------------
+// 38. Write a JavaScript program to remove the key-value pairs corresponding to the given keys from an object.
+const objRemover = (obj, key) => {
+  delete obj[key];
+  return obj
+}
+console.log(objRemover({firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}, 'eyeColor'));
+//------------------------------------------------------------
+// 39. Write a JavaScript program to create an array of key-value pair arrays from an given object.
+const pairsBuilder = obj => {return Object.entries(obj);}
+console.log(pairsBuilder({firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}));
+//-------------------------------------------------------------
+// 40. Write a JavaScript program to create an object from the given key-value pairs.
+const objToArr = arr => arr.reduce((acc,v) => ((acc[v[0]] = v[1]), acc) , {});
+console.log(objToArr([[1, 10], [2, 20], [3, 30]]));
+//-------------------------------------------------------------
