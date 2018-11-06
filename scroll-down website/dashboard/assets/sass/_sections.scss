@@ -1,0 +1,130 @@
+// sections
+.our-mission{
+  height: 600px;
+  position: relative;
+  // BACKGROUND IMAGE WITH PROPERTIES DEFINED
+  background: url("https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  h2{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 44px;
+    font-weight: bold;
+  }
+  // PROVIDING WIDTH AND ALIGNNENT TO ELEMENTS WITHIN WRAPPER ELEMENT(BLOCK-LEVEL ELEMENT)
+  .wrapper{
+    width: 80%;
+    margin: auto;
+    position: absolute;
+    top: 100px;
+    left: 10%;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+  }
+}
+.about{
+  height: 300px;
+  position: relative;
+  background: white;
+  .wrapper{
+    width: 80%;
+    margin: auto;
+    position: absolute;
+    top: 60px;
+    left: 10%;
+    text-align: center;
+    color: grey;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  h2{
+    color: #0ebfdd;
+    margin-bottom: 30px;
+    font-size: 44px;
+    font-weight: bold;
+  }
+}
+.team {
+  height: 600px;
+  position: relative;
+  background: #0ebfdd;
+  .wrapper{
+    width: 80%;
+    margin: auto;
+    position: absolute;
+    left: 10%;
+    text-align: center;
+  h2{
+    color: white;
+    padding: 20px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 44px;
+    font-weight: bold;
+  }
+  .button{
+    display: inline-block;
+    width: 180px;
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid white;
+    text-decoration: none;
+    color: white;
+    margin-top: 35px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: .5s;
+    &:hover{
+      font-size: 25px;
+      font-weight: bold;
+      width: 230px;
+      border: 3px solid white;
+    }
+  }
+}
+.team-members{
+  padding: 10px;
+  .team-member{
+    width: 30%;
+    display: inline-block;
+    img{
+      border-radius: 50%;
+      max-width: 200px;
+    }
+    h4{
+      font-size: 20px;
+      color: white;
+      padding: 15px;
+    }
+    h6{
+      color: white;
+    }
+  }
+}
+}
+ footer{
+   background: #45494d;
+   height: 120px;
+     ul li{
+         display: inline-block;
+         a{
+           text-decoration: none;
+           color: white;
+         }
+       }
+       }
+.top{
+  padding: 10px;
+  text-align: center;
+}
+.bottom{
+  padding: 10px;
+  text-align: center;
+  border-top: 2px solid white;
+  margin-top: 15px;
+}

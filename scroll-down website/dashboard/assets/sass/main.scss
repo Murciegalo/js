@@ -1,0 +1,45 @@
+@import url( 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+@import "reset";
+@import "sections";
+// GENERAL ASSEMBLANCE FOR DOM
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// HEADER
+header{
+  background-color: #f7fdfe;
+  nav{
+    height: 78px;
+    width: 70%;
+    margin: auto;
+    padding: 16px 10px;
+    ul li{
+      list-style: none;
+      display: inline-block;
+      float: right;
+      width: 10%;
+      font-size: 20px;
+      padding-top: 10px;
+    }
+    a{
+      text-decoration: none;
+      color: #82868f;
+    }
+  }
+  // HIGHTLIGHTED ELEMENT
+  .highlight{
+    list-style: none;
+    background-color: #0ebfdd;
+    color: #f7fdfe;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+  }
+  .logo{
+    float: left;
+    font-size: 40px;
+  }
+}
+// HEADER END
