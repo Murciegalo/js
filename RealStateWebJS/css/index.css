@@ -1,0 +1,1009 @@
+/* HEADER */
+
+html, body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.background {
+    background-color: #928E83;
+    background-image: url("../img/second1.png");
+    background-size:  cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 520px;
+}
+
+.contentor {
+    position: relative;
+}
+
+.logo {
+    width: 30vw;
+    height: auto;
+    margin: 80px 20px;
+}
+
+.headerbottomimage {
+    position: absolute;
+    width: 40vw;
+    /*height: auto;*/
+    bottom: 0;
+    vertical-align: bottom;
+
+}
+
+.headertitlebottom {
+    position: absolute;
+    right: 0;
+    vertical-align: text-bottom;
+    bottom: 0;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(189, 189, 189, 0.5);
+    align-items: center;
+    padding: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    width: 29vw;
+    text-align: center;
+    margin: 0;
+}
+
+@media screen and (max-width: 991px) {
+    .background {
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100%;
+    }
+
+    .headerbottomimage {
+        display: none;
+    }
+
+    .headertitlebottom {
+        position: absolute;
+        right: 0;
+        vertical-align: text-bottom;
+        bottom: 0%;
+        text-transform: uppercase;
+        color: white;
+        background-color: rgba(189, 189, 189, 0.5);
+        align-items: center;
+        padding: 20px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 26px;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .bottomrow {
+        padding: 0;
+        margin: 0 auto -20px auto;
+    }
+
+    .logo {
+        width: 30vw;
+        height: auto;
+        margin: 10px 0px 0px 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .background {
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 60%;
+    }
+
+    .logo {
+        /*width: 80vw;*/
+        /*height: auto;*/
+        /*margin: 150px 20px;*/
+        display: none;
+    }
+
+    h5 {
+        font-family: 'Raleway', sans-serif;
+        color: white;
+        font-size: 18px;
+    }
+
+}
+
+/*NAVBAR*/
+
+.navbar2 {
+    display: inline-flex;
+    background-color: rgba(176, 171, 142, 0.6);
+    height: 70px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
+    margin-top: 100px;
+    margin-right: 0px;
+    border-left: white solid 16px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.navbar2 a:hover{
+    text-decoration: none;
+}
+
+.navtext {
+    text-transform: uppercase;
+    text-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
+    display: inline-flex;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    margin: auto 20px 0px 20px;
+    color: white;
+}
+
+.burger {
+    display: none;
+    position: fixed;
+    top: 0;
+    background-color:rgba(137, 134, 124, 0.8);
+    color: white;
+    width: 100vw;
+    height: 70px;
+    z-index: 1000000000;
+    margin: 0 auto auto 0px;
+}
+
+.burgerlogo {
+    display: unset;
+    height: 60px;
+    margin: 10px auto auto 8px;
+}
+
+.burger-button{
+    margin-top: 20px;
+}
+
+.burger-nav{
+    background-color: transparent;
+    border:none;
+}
+.navbar-nav {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.buger-list-wrapper{
+    background-color:rgba(137, 134, 124, 0.5);
+    border: none;
+}
+
+/*overwrite default*/
+.navbar-inverse .navbar-nav>li>a{
+    color: #EBEBEB;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.burger-mobile{
+    display: none;
+}
+
+/*NAVBAR MOBILE*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar2 {
+        display: inline-flex;
+        background-color: rgba(176, 171, 142, 0.6);
+        height: 70px;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
+        margin-top: 10px;
+        margin-right: 0px;
+        border-left: white solid 16px;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+}
+
+
+/*Hamburguer menu*/
+@media screen and (max-width: 767px) {
+    .navbar2 {
+        display: none;
+    }
+
+    .burger-mobile {
+        display: unset;
+        position: fixed;
+        top: 0;
+        background-color:rgba(137, 134, 124, 0.8);
+        color: white;
+        width: 100vw;
+        height: 70px;
+        z-index: 1000000000;
+        margin: 0 auto auto 0px;
+    }
+    .navbar-nav{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+/* DESCRIPTION */
+#oprojektu {
+    background-color: #EBEBEB;
+    width: 100vw;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Lora', serif;
+}
+
+.descriptiontitle {
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    background-color: #C0BB95;
+    margin: -25px 60px 60px 0;
+    padding: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+.houses {
+    display: flex;
+    display: -webkit-flex;
+    float: right;
+    align-content: right;
+    margin: 40px 20px 0px 20px;
+    width: 264px;
+    height: auto;
+}
+
+.descriptiontext {
+    margin: 0 20px;
+
+}
+
+.descriptiontext1 {
+    margin: 0 20px;
+}
+
+.titles {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #969289;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.maintitle {
+    color: #969289;
+    font-family: 'Lora', serif;
+    /*text-transform: uppercase;*/
+}
+
+.textbody {
+    color: #969289;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 991px) {
+    .houses {
+        display: flex;
+        display: -webkit-flex;
+        float: none;
+        align-content: right;
+        margin: auto;
+        width: initial;
+        height: auto;
+    }
+
+    .descriptiontitle {
+        display: inline-block;
+        text-transform: uppercase;
+        color: white;
+        background-color: #C0BB95;
+        margin: -25px 60px 60px 0;
+        padding: 20px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 18px;
+    }
+
+}
+/*Location and Map*/
+
+#Lokalita {
+    background-color: #DFDDC6;
+}
+
+.location-wapper {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#Lokalita h3 {
+    color: rgb(139, 139, 136);
+    font-family: 'Lora', serif;
+}
+
+.lokalita {
+    padding-left: 0px;
+    margin-top: 50px;
+}
+
+.location-img{
+    margin-top: 68px;
+}
+
+#mapkit-7239 {
+    height: 400px;
+    width: 100%;
+    margin: auto;
+}
+
+@media screen and (max-width: 991px) {
+    .location-wapper {
+        padding-top: 5px;
+        padding-bottom: 20px;
+    }
+
+    .lokalita {
+        padding-left: 0px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .location-img{
+        display: none;
+    }
+
+    #mapkit-7239 {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #mapkit-7239 {
+        height: 250px;
+    }
+
+    #Lokalita h3 {
+        color: rgb(139, 139, 136);
+        font-family: 'Lora', serif;
+        margin-left: 20px;
+    }
+
+    .lokalita-contents p{
+    width: 90%;
+    margin: auto;
+    }
+}
+
+/* TABLE */
+#Přehledbytůacen {
+    background-image: url("../img/table-background.jpg");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+#Přehledbytůacen h3 {
+    color: rgb(139, 139, 136);
+    font-family: 'Lora', serif;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.table {
+    justify-content: center;
+    text-align: center;
+    width: auto;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+
+.thead-color {
+    background-color: #888479;
+    color: white;
+    font-size: 100%;
+}
+
+.thead-color tr {
+    height: 50px;
+}
+
+.table > thead > tr > th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+tbody {
+    background-color: rgba(254, 251, 246, 0.9);
+    color: dimgray;
+}
+
+.room-1kk {
+}
+
+room-12kk {
+
+}
+
+.room-3kk {
+
+}
+
+.room-4kk {
+
+}
+
+.table-content {
+    display: inline;
+}
+
+.room-group-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 991px) {
+    .room-table{
+        margin-bottom: 20px;
+    }
+
+    table{
+        display: none;
+    }
+
+    .room-group-mobile {
+        display: unset;
+        width: 100%;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+
+    .multi-column {
+        width: 100%;
+        display: block;
+        position: static;
+        margin: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #DDDDDD;
+        box-shadow: none;
+    }
+
+    .table-floor-mobile {
+        background-color: #888479;
+        color: white;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .table-room-mobile {
+        width: 100%;
+        border-radius: 0;
+        background-color: rgba(254, 251, 246, 0.5);
+        border-top: 1px solid #DDDDDD;
+        color: dimgray;
+        font-weight: 300;
+    }
+
+    .room-content-mobile {
+        list-style: none;
+    }
+
+    .pdf-mobile {
+        width: 250px;
+        background-color: #888479;
+        opacity: 0.8;
+        color: white;
+    }
+
+    .table-mobile-button11{
+        margin-bottom: 30px;
+    }
+
+    #room11{
+        margin-top: -30px;
+    }
+}
+@media screen and (max-width: 767px) {
+    #Přehledbytůacen h3 {
+        color: rgb(139, 139, 136);
+        font-family: 'Lora', serif;
+        margin-top: 80px;
+        margin-bottom: 40px;
+        margin-left: 20px;
+    }
+}
+
+
+/*Galerie*/
+#Galerie {
+    background-color: rgb(157, 154, 144);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#Galerie > .container-gallery {
+    margin-right: 0;
+    margin-left: 0;
+    width: 90%;
+}
+
+.slide-show {
+    margin-top: 20px;
+}
+
+
+.gallery-title-mobile{
+    display: none;
+}
+
+#Galerie h3 {
+    font-family: 'Lora', serif;
+    color: rgb(255, 255, 255);
+}
+
+
+/** Carousel **/
+.jcarousel-wrapper {
+    margin: 20px auto;
+    position: relative;
+    /*border: 5px solid #fff;*/
+    -webkit-box-shadow: 0 0 2px #999;
+    -moz-box-shadow: 0 0 2px #999;
+    box-shadow: 0 0 2px #999;
+}
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    width: 200px;
+    height: 200px;
+    float: left;
+    border: 10px solid rgb(157, 154, 144);
+    /*-moz-box-sizing: border-box;*/
+    /*-webkit-box-sizing: border-box;*/
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+
+}
+
+.jcarousel img {
+    display: block;
+    max-width: 100%;
+}
+
+/** Carousel Controls **/
+
+/*.jcarousel-control-prev,*/
+/*.jcarousel-control-next {*/
+/*position: absolute;*/
+/*top: 50%;*/
+/*margin-top: -15px;*/
+/*width: 30px;*/
+/*height: 30px;*/
+/*text-align: center;*/
+/*background: #4E443C;*/
+/*color: #fff;*/
+/*text-decoration: none;*/
+/*text-shadow: 0 0 1px #000;*/
+/*font: 24px/27px Arial, sans-serif;*/
+/*-webkit-border-radius: 30px;*/
+/*-moz-border-radius: 30px;*/
+/*border-radius: 30px;*/
+/*-webkit-box-shadow: 0 0 4px #F0EFE7;*/
+/*-moz-box-shadow: 0 0 4px #F0EFE7;*/
+/*box-shadow: 0 0 4px #F0EFE7;*/
+/*}*/
+
+/*.jcarousel-control-prev {*/
+/*left: 15px;*/
+/*}*/
+
+/*.jcarousel-control-next {*/
+/*right: 15px;*/
+/*}*/
+
+/** Carousel Pagination **/
+.jcarousel-pagination {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    margin: 0;
+    height: 25px;
+}
+
+.jcarousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    height: 10px;
+    width: 10px;
+    line-height: 10px;
+
+    background: #fff;
+    color: #4E443C;
+    border-radius: 10px;
+    text-indent: -9999px;
+
+    margin-right: 7px;
+
+    -webkit-box-shadow: 0 0 2px #4E443C;
+    -moz-box-shadow: 0 0 2px #4E443C;
+    box-shadow: 0 0 2px #4E443C;
+}
+
+.jcarousel-pagination a.active {
+    background: #4E443C;
+    color: #fff;
+    opacity: 1;
+
+    -webkit-box-shadow: 0 0 2px #F0EFE7;
+    -moz-box-shadow: 0 0 2px #F0EFE7;
+    box-shadow: 0 0 2px #F0EFE7;
+}
+
+.home-carousel-control {
+    left: -12px;
+    height: 0px;
+    width: 40px;
+    margin-top: 95px;
+}
+
+.home-carousel-control.right {
+    right: -12px;
+}
+
+/*popup images of slider*/
+
+.mfp-no-margins img.mfp-img {
+    padding: 20px;
+    width: 70%;
+}
+
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+    top: 0;
+    bottom: 0;
+}
+
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+}
+
+.mfp-figure:after{
+    width: 70%;
+    margin: auto;
+}
+
+/*container size*/
+/*.mfp-bg {*/
+    /*top: 10%;*/
+    /*left: 10%;*/
+    /*width: 80%;*/
+    /*height: 80%;*/
+/*}*/
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+    opacity: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+
+@media screen and (max-width: 767px) {
+    #Galerie {
+        background-color: rgb(157, 154, 144);
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gallery-title{
+        display: none;
+    }
+
+    .gallery-title-mobile {
+        display: unset;
+        width: 100%;
+        margin-left: 40px;
+    }
+
+    .mfp-no-margins img.mfp-img {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .mfp-figure:after{
+        width: 100%;
+        margin: auto;
+    }
+
+    /*container size*/
+    /*.mfp-bg {*/
+        /*top: 5%;*/
+        /*left: 5%;*/
+        /*width: 90%;*/
+        /*height: 90%;*/
+    /*}*/
+}
+
+/*contact form*/
+#Kontakt {
+    height: 620px;
+    background-image: url('../img/cube2.png');
+    background-repeat: no-repeat;
+    background-position: 117% 20%;
+    background-color: rgba(211, 212, 185, 0.8);
+}
+
+#Kontakt h3, h4 {
+    font-family: 'Lora', serif;
+    color: rgb(137, 134, 124);
+}
+
+.section-title-contact {
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.home-contact-form {
+    border-radius: 2px;
+}
+
+.contact-button {
+    width: 100px;
+    float: right;
+}
+
+/*ajax form*/
+.loading, .success, .error {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(177, 195, 148, 0.5);
+    border: solid 2px rgb(177, 195, 148);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hide-contact-message {
+    display: none;
+}
+
+.contact-message {
+    color: rgb(137, 134, 124);
+    text-align: center;
+    width: 100%;
+}
+
+/*company info*/
+.residence-info {
+    position: absolute;
+    left: 175px;
+}
+
+.residence-info img {
+    width: 302.500px;
+}
+
+.company-lists {
+    height: 190px;
+    border-left: solid 2px rgb(186, 185, 167);
+    margin-top: 85px;
+    margin-left: 77.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.company-list div {
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: rgb(137, 134, 124);
+    padding: 5px 0px 5px 10px;
+}
+
+.button-to-top {
+    width: 80px;
+    /*height: 40px;*/
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(137, 134, 124, 0.7);
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    display: none;
+
+}
+
+@media screen and (min-width: 576px) {
+
+}
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+    #Kontakt{
+        height: 730px;
+    }
+    #Kontakt h3{
+        margin-left: 20px;
+    }
+    .contact-init {
+        width: 80%;
+        margin: auto;
+    }
+
+    .loading, .success, .error {
+        width: 80%;
+        margin: 10px auto;
+        background-color: rgba(177, 195, 148, 0.5);
+        border: solid 2px rgb(177, 195, 148);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contact-message {
+        color: rgb(137, 134, 124);
+        text-align: center;
+        width: 100%;
+    }
+
+    .hide-contact-message {
+        display: none;
+    }
+
+    .residence-info {
+        width: 80%;
+        position: static;
+        left: 0px;
+        top: 0px;
+        margin: auto;
+    }
+
+    .company-logo {
+        width: 60%;
+        margin: auto;
+        padding-top: 0px;
+    }
+
+    .residence-info img {
+        width: 100%;
+        margin: auto;
+    }
+
+    .company-lists {
+        height: 100px;
+        width: 100%;
+        border-left: none;
+        margin-top: 50px;
+        margin-left: 0px;
+        margin: auto;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .company-list div {
+        font-size: 12px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+        color: rgb(137, 134, 124);
+        padding: 5px 0px 5px 10px;
+    }
+
+    .company-list {
+        margin: auto;
+    }
+
+    .company-list-mobile {
+        display: unset;
+        width: 100%;
+        height: 100%;
+    }
+
+    .company-list-mobile div {
+        font-size: 12px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+        color: rgb(137, 134, 124);
+        padding: 10px 0px 10px 0px;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+/* 767 < sm < 992 */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #Kontakt{
+        height: 900px;
+    }
+    .company-lists {
+        height: 150px;
+        border-left: solid 2px rgb(186, 185, 167);
+        margin-top: 30px;
+        margin-left: 77.5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contact-init {
+        width: 60%;
+        margin: auto;
+    }
+}
+
+/* 991 < md < 1200 */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* lg < 1200 */
+@media screen and (min-width: 1200px) {
+}
+
+
