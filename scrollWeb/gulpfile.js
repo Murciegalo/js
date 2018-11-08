@@ -8,7 +8,7 @@ const browserSync = require('browser-sync')
 const reload = browserSync.reload
 var exec = require('child_process').exec;
 
-gulp.task('default', ['styles', 'webpack', 'browser-sync'], () => {
+gulp.task('default', ['styles', 'browser-sync'], () => {
   gulp.watch('./assets/sass/**/*', ['styles'])
   gulp.watch(['./public/**/*', './public/*', '!public/js/**/.#*js', '!public/css/**/.#*css']).on('change', reload)
 })
