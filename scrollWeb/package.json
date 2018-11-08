@@ -1,7 +1,7 @@
 {
   "name": "",
   "version": "1.0.0",
-  "description": "Super Cool Framework",
+  "description": "",
   "main": "index.js",
   "author": "",
   "license": "MIT",
@@ -33,16 +33,13 @@
     "react-router": "^4.3.1",
     "redux": "^3.6.0",
     "sass-loader": "^6.0.3",
-    "standard": "^10.0.2",
-    "webpack": "^2.7.0",
-    "webpack-stream": "^3.2.0"
+    "standard": "^10.0.2"
   },
   "scripts": {
     "bundle": "./node_modules/.bin/webpack",
     "production": "./node_modules/.bin/webpack -p",
     "watch": "gulp",
     "sass": "gulp styles",
-    "js": "gulp webpack"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
