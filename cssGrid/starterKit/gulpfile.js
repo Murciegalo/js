@@ -10,7 +10,6 @@ var exec = require('child_process').exec;
 
 gulp.task('default', ['styles', 'webpack', 'browser-sync'], () => {
   gulp.watch('./assets/sass/**/*', ['styles'])
-  gulp.watch('./assets/js/**/*', ['webpack'])
   gulp.watch(['./public/**/*', './public/*', '!public/js/**/.#*js', '!public/css/**/.#*css']).on('change', reload)
 })
 
@@ -45,13 +44,13 @@ gulp.task('browser-sync', ['styles'], function () {
     });
 })
 
-gulp.task('webpack', (cb) => {
-  exec('webpack', function (err, stdout, stderr) {
-      console.log(stdout);
-      console.log(stderr);
-      cb(err);
-    });
-})
+//gulp.task('webpack', (cb) => {
+//  exec('webpack', function (err, stdout, stderr) {
+//      console.log(stdout);
+//      console.log(stderr);
+//      cb(err);
+//    });
+//})
 
 // gulp.task('webpack', shell.task([
 //   'webpack'
